@@ -15,12 +15,15 @@ namespace UnityServe
 
         public override void OnFrameworkInitializationCompleted()
         {
+            MainWindowViewModel mainWindowViewModel = new();
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = mainWindowViewModel,
                 };
+                desktop.ShutdownRequested += mainWindowViewModel.ShutdownRequested;
             }
 
             base.OnFrameworkInitializationCompleted();

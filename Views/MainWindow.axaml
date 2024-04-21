@@ -3,13 +3,13 @@
         xmlns:vm="using:UnityServe.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="140"
         x:Class="UnityServe.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="UnityServe"
-		CanResize="False"
-		Width="250" Height="150">
+        Title="Unity Serve - Unity WebGL Localhost"
+		    CanResize="False" SizeToContent="WidthAndHeight"
+        Background="#4e586e">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -17,12 +17,24 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<Grid Margin="20">
-	    <StackPanel Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
-		    <TextBox Name="GamePath" Watermark="Game path" Cursor="Hand"/>
-			<TextBox Name="Port" Watermark="Port (Ex: 8080)"/>
-		    <Button Name="ToggleServerButton" Click="ToggleServer" Background="#2C7865">Start Server</Button>
-	    </StackPanel>
-	</Grid>
+	  <Grid Margin="20">
+	      <StackPanel Spacing="15" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="300" MaxWidth="300" MinHeight="140" MaxHeight="140">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="85*"/>
+              <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.Styles>
+              
+            </Grid.Styles>
+
+		        <TextBox Name="GamePath" Watermark="Game path" Grid.Column="0" Padding="8" Margin="0 0 8 0" Background="#3b455d" Foreground="#ffffff"/>
+            <Button Click="OpenGamePath" Grid.Column="1" Padding="8" Background="#242a38" Foreground="#ffffff">Browse</Button>
+          </Grid>
+			    <TextBox Name="Port" Watermark="Port (Ex: 8080)" Padding="8" Background="#3b455d" Foreground="#ffffff"/>
+		      <Button Name="ToggleServerButton" Click="ToggleServer" Background="#3cd37e" Foreground="#ffffff" HorizontalAlignment="Center" Padding="8">Start Server</Button>
+	      </StackPanel>
+	  </Grid>
 
 </Window>

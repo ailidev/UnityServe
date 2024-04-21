@@ -7,23 +7,18 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="Models\" />
-    <AvaloniaResource Include="Assets\**" />
+    <Folder Include="Models\"/>
+    <AvaloniaResource Include="Assets\**"/>
   </ItemGroup>
-
-
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.10" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.10" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.10" />
-    <PackageReference Include="Watson" Version="6.1.8" />
-    <PackageReference Include="Watson.Core" Version="6.1.8" />
-    <PackageReference Include="Watson.Lite" Version="6.1.8" />
+    <PackageReference Include="Avalonia" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10"/><!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="&apos;$(Configuration)&apos; == &apos;Debug&apos;" Include="Avalonia.Diagnostics" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.10"/>
+    <PackageReference Include="GenHTTP.Core" Version="8.0.0"/>
+    <PackageReference Include="GenHTTP.Modules.StaticWebsites" Version="8.0.0"/>
   </ItemGroup>
 </Project>
